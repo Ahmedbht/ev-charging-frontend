@@ -217,3 +217,13 @@ body {
     color: white;
     border-color: #4CAF50;
 }
+/* loading spinner */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 16px;
+    color: #888;
+}

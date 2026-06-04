@@ -2,6 +2,7 @@
 import{ useState, useEffect} from "react";
 import axios  from "axios";
 import{MapPin, Zap,User,CheckCircle, HelpCircle, Search} from "lucide-react";
+import {ClipLoader } from "react-spinners";
 
 function StationList(){
     //stations list start empty// and data still loading 
@@ -24,7 +25,12 @@ function StationList(){
     },[]);
     
     if (loading){
-        return<p>Loading stations..</p>;
+        return(
+            <div className="loading">
+                <ClipLoader color="#4CAF50" size={40} />
+                <p>Loading stations..</p>
+            </div>
+        );
     }
     const filtredStations = stations.filter((station)=> {
         //filter by search
