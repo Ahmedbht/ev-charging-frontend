@@ -1,38 +1,174 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: #1a1a2e;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* header */
+.header {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* analytics */
+.analytics {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.analytics h2 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #1a1a2e;
+}
+
+.stats-cards {
   display: flex;
-  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  flex: 1;
+  background: #f8f9ff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e8eaf6;
+}
+
+.stat-card svg {
+  color: #4CAF50;
+  margin-bottom: 8px;
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.stat-card p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* top stations */
+.top-stations {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.top-stations h2 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.top-station-card {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 16px;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #f8f9ff;
+  border: 1px solid #e8eaf6;
 }
 
-.App-link {
-  color: #61dafb;
+.rank {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  color: #f0a500;
+  min-width: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-station-info {
+  flex: 1;
+}
+
+.top-station-info h3 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.top-station-info p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.points {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* station list */
+.station-list {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.station-list h2 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.station-card {
+  background: #f8f9ff;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border-left: 4px solid #4CAF50;
+}
+
+.station-card h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #1a1a2e;
+}
+
+.station-card p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 0.9rem;
 }
