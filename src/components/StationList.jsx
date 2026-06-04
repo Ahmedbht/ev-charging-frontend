@@ -8,7 +8,7 @@ function StationList(){
     const[stations, setStations]= useState([]);
     const[loading, setLoading] =useState(true);
     const[search, setSearch] = useState("");
-
+    const[showOperational, setShowOperational] = useState(false);
 
     useEffect(()=>{
         axios.get("http://127.0.0.1:8000/stations")
@@ -26,7 +26,15 @@ function StationList(){
     if (loading){
         return<p>Loading stations..</p>;
     }
-    const filtredStations = stations.filter((station)=> station.city?.toLowerCase().includes(search.toLowerCase()))
+    const filtredStations = stations.filter((station)=> {
+        //filter by search
+        const matchesSearch = station.city?.toLowerCase().includes(search.toLowerCase());
+        //filter show operatioanll
+        const matchesOperational = showOperational ? station.is_operational !== false: true;
+
+        //return the two conditions
+        return matchesSearch && matchesOperational;
+    });
 
     return(
         <div className="station-list">
@@ -34,6 +42,11 @@ function StationList(){
 
 
             <div className="search-bar">
+                <button className={showOperational ? "filter-btn active": "filter-btn"}
+                onClick={() => setShowOperational(!showOperational)}>
+                    <CheckCircle size={16}/>
+                     {showOperational ? "showing operational" : "show operational onlt"}
+                     </button>
                 <Search size={18} />
                 <input type="text" placeholder="Search by city:" value={search} onChange={(e) => setSearch(e.target.value)}/>
             </div>
