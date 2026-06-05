@@ -9,7 +9,7 @@ function Analytics(){
     const[loading, setLoading]= useState(true);
 
     useEffect(() =>{
-        axios.get("http://127.0.0.1:8000/stations/analytics")
+        axios.get("https://ev-charging-app-aape.onrender.com/stations/analytic")
         .then((response) =>{
             setAnalytics(response.data);
             setLoading(false);

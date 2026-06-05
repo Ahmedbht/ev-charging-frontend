@@ -8,7 +8,7 @@ function TopStations(){
     const[loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        axios.get("http://127.0.0.1:8000/stations/top")
+        axios.get("https://ev-charging-app-aape.onrender.com/stations/top")
         .then((response) =>
         {
             setStations(response.data);

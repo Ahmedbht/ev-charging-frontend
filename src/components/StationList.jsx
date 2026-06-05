@@ -12,7 +12,7 @@ function StationList(){
     const[showOperational, setShowOperational] = useState(false);
 
     useEffect(()=>{
-        axios.get("http://127.0.0.1:8000/stations")
+        axios.get("https://ev-charging-app-aape.onrender.com/stations")
         .then((response) =>{
             //data from api // and when data arrived loading is finished
             setStations(response.data);
