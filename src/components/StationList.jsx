@@ -12,7 +12,7 @@ function StationList(){
     const[showOperational, setShowOperational] = useState(false);
 
     useEffect(()=>{
-        axios.get("https://ev-charging-app-aape.onrender.com/stations")
+        axios.get("https://ev-charging-app-production.up.railway.app/stations")
         .then((response) =>{
             //data from api // and when data arrived loading is finished
             setStations(response.data);
