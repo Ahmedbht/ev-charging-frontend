@@ -8,7 +8,7 @@ function TopStations(){
     const[loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        axios.get("https://ev-charging-app-aape.onrender.com/stations/top")
+        axios.get("https://ev-charging-app-production.up.railway.app/stations/top")
         .then((response) =>
         {
             setStations(response.data);
